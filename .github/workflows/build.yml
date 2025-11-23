@@ -7,7 +7,8 @@ on:
     branches: [ "main", "release/*" ]
 
 env:
-  MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+  MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASS }}
+  MAVEN_GPG_KEY: ${{ secrets.GPG_KEY }}
 
 jobs:
   build:
@@ -21,4 +22,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build and test with Maven
-        run: mvn -B verify -DskipTests=false --file pom.xml
+        run: mvn -B verify --file pom.xml
