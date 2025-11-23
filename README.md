@@ -24,13 +24,17 @@
 ## Installation
 
 ### Maven
-
 ```xml
 <dependency>
     <groupId>io.github.ggutim</groupId>
     <artifactId>natural-date-parser</artifactId>
     <version>1.0.0</version>
 </dependency>
+```
+
+### Gradle
+```groovy
+implementation("io.github.ggutim:natural-date-parser:1.0.0")
 ```
 
 ## Usage
