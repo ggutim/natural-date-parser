@@ -23,7 +23,15 @@
 
 ## Installation
 
-Soon out across all digital stores...
+### Maven
+
+```xml
+<dependency>
+    <groupId>io.github.ggutim</groupId>
+    <artifactId>natural-date-parser</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
 
 ## Usage
 
