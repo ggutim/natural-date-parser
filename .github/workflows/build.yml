@@ -7,7 +7,7 @@ on:
     branches: [ "main", "release/*" ]
 
 env:
-  MAVEN_GPG_PASSPHRASE: ${{ env.MAVEN_GPG_PASSPHRASE }}
+  MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
 jobs:
   build:
