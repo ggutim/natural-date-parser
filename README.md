@@ -29,7 +29,7 @@
 <dependency>
     <groupId>io.github.ggutim</groupId>
     <artifactId>natural-date-parser</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
