@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "main", "release/*" ]
 
+env:
+  MAVEN_GPG_PASSPHRASE: ${{ env.MAVEN_GPG_PASSPHRASE }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
