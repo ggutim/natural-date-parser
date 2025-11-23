@@ -1,9 +1,7 @@
-name: Build with Maven
+name: Workflow with Maven
 
 on:
   push:
-    branches: [ "main", "release/*" ]
-  pull_request:
     branches: [ "main", "release/*" ]
 
 env:
@@ -22,7 +20,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build and test with Maven
+      - name: Build & Test with Maven
         run: mvn -B verify
   deploy:
     name: Deploy to Maven Central
