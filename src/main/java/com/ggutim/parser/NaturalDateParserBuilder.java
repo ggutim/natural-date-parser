@@ -13,7 +13,7 @@ public class NaturalDateParserBuilder {
       new Tokenizer(new DefaultNormalizationPipeline(), new WordTokenizer());
   private static final ParsePipeline defaultParsePipeline = new RuleBasedParsePipeline();
 
-  public NaturalDateParserBuilder() {
+  NaturalDateParserBuilder() {
     this.parser = new NaturalDateParser(defaultTokenizer, defaultParsePipeline);
   }
 

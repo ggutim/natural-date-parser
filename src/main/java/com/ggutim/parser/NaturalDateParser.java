@@ -12,7 +12,7 @@ public class NaturalDateParser {
   private final Tokenizer tokenizer;
   private final ParsePipeline pipeline;
 
-  public NaturalDateParser(Tokenizer tokenizer, ParsePipeline pipeline) {
+  NaturalDateParser(Tokenizer tokenizer, ParsePipeline pipeline) {
     this.tokenizer = tokenizer;
     this.pipeline = pipeline;
   }
