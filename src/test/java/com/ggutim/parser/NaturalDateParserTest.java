@@ -64,6 +64,10 @@ class NaturalDateParserTest {
         Arguments.of(
             "3 thirty AM on Sunday, March 12th, 2023",
             reference,
-            LocalDateTime.of(2023, 3, 12, 3, 30)));
+            LocalDateTime.of(2023, 3, 12, 3, 30)),
+        Arguments.of("tmrw at 5", reference, LocalDateTime.of(2026, 6, 16, 5, 0)),
+        Arguments.of("tommorow at 17:30", reference, LocalDateTime.of(2026, 6, 16, 17, 30)),
+        Arguments.of("tdy", reference, LocalDateTime.of(2026, 6, 15, 12, 0)),
+        Arguments.of("yday at noon", reference, LocalDateTime.of(2026, 6, 14, 12, 0)));
   }
 }

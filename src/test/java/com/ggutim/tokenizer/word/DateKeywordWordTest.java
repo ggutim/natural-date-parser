@@ -23,8 +23,12 @@ class DateKeywordWordTest {
   private static Stream<Arguments> provideInputsForShouldMatch() {
     return Stream.of(
         Arguments.of("today"),
+        Arguments.of("tdy"),
         Arguments.of("tomorrow"),
+        Arguments.of("tmrw"),
+        Arguments.of("tommorow"),
         Arguments.of("yesterday"),
+        Arguments.of("yday"),
         Arguments.of("day_before_yesterday"),
         Arguments.of("day_after_tomorrow"));
   }
@@ -39,7 +43,7 @@ class DateKeywordWordTest {
     return Stream.of(
         Arguments.of("todayy"),
         Arguments.of("tomorroww"),
-        Arguments.of("tomorow"),
+        Arguments.of("tomorrows"),
         Arguments.of("day_after_yesterday"),
         Arguments.of("day_before_tomorrow"));
   }
@@ -58,11 +62,22 @@ class DateKeywordWordTest {
         Arguments.of(
             "today", new Token(TokenType.DATE_KEYWORD, "today", DateKeywordWord.DateKeyword.TODAY)),
         Arguments.of(
+            "tdy", new Token(TokenType.DATE_KEYWORD, "tdy", DateKeywordWord.DateKeyword.TODAY)),
+        Arguments.of(
             "tomorrow",
             new Token(TokenType.DATE_KEYWORD, "tomorrow", DateKeywordWord.DateKeyword.TOMORROW)),
         Arguments.of(
+            "tmrw",
+            new Token(TokenType.DATE_KEYWORD, "tmrw", DateKeywordWord.DateKeyword.TOMORROW)),
+        Arguments.of(
+            "tommorow",
+            new Token(TokenType.DATE_KEYWORD, "tommorow", DateKeywordWord.DateKeyword.TOMORROW)),
+        Arguments.of(
             "yesterday",
             new Token(TokenType.DATE_KEYWORD, "yesterday", DateKeywordWord.DateKeyword.YESTERDAY)),
+        Arguments.of(
+            "yday",
+            new Token(TokenType.DATE_KEYWORD, "yday", DateKeywordWord.DateKeyword.YESTERDAY)),
         Arguments.of(
             "day_before_yesterday",
             new Token(
