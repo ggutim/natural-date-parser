@@ -17,8 +17,6 @@
 
 - Absolute dates using numbers only (e.g. _10/02/2025_, _2025-02-10 at 7pm_)
 - More complex relatives (e.g. _a week from friday_, _the day after next monday_)
-- Mixed numbers and digits (e.g. _twenty-one days from now_, _five hundred seconds ago_)
-- More fuzzy inputs (e.g. _tmrw at 5_)
 - More about local date times and multi-language support
 
 ## Installation
@@ -28,13 +26,13 @@
 <dependency>
     <groupId>io.github.ggutim</groupId>
     <artifactId>natural-date-parser</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 ```groovy
-implementation("io.github.ggutim:natural-date-parser:1.0.0")
+implementation("io.github.ggutim:natural-date-parser:1.0.1")
 ```
 
 ## Usage
