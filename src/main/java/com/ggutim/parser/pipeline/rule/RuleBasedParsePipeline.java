@@ -12,6 +12,7 @@ public class RuleBasedParsePipeline implements ParsePipeline {
 
   private final List<Rule> rules =
       List.of(
+          new StructuredDateRule(),
           new AbsoluteDateRule(),
           new RelativeDateKeywordRule(),
           new RelativeQuantityRule(),

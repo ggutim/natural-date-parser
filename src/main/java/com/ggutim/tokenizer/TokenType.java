@@ -6,6 +6,7 @@ public enum TokenType {
   YEAR,
   WEEKDAY,
   TIME,
+  STRUCTURED_DATE,
   UNIT,
   MERIDIEM,
   KEYWORD,

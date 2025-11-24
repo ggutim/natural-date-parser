@@ -9,6 +9,7 @@ public class WordTokenizer {
 
   private final List<Word> strategies =
       List.of(
+          new StructuredDateWord(),
           new MonthWord(),
           new WeekdayWord(),
           new KeywordWord(),

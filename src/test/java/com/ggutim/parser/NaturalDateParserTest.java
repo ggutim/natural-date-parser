@@ -57,6 +57,7 @@ class NaturalDateParserTest {
         Arguments.of("in 1 week next monday at 9", reference, LocalDateTime.of(2026, 6, 29, 9, 0)),
         Arguments.of("in 2 days at midnight", reference, LocalDateTime.of(2026, 6, 17, 0, 0)),
         Arguments.of("12:30", reference, LocalDateTime.of(2026, 6, 15, 12, 30)),
+        Arguments.of("19:30", reference, LocalDateTime.of(2026, 6, 15, 19, 30)),
         Arguments.of("17 June 2027", reference, LocalDateTime.of(2027, 6, 17, 12, 0)),
         Arguments.of("June 17", reference, LocalDateTime.of(2026, 6, 17, 12, 0)),
         Arguments.of("June 17th at noon", reference, LocalDateTime.of(2026, 6, 17, 12, 0)),
@@ -68,6 +69,16 @@ class NaturalDateParserTest {
         Arguments.of("tmrw at 5", reference, LocalDateTime.of(2026, 6, 16, 5, 0)),
         Arguments.of("tommorow at 17:30", reference, LocalDateTime.of(2026, 6, 16, 17, 30)),
         Arguments.of("tdy", reference, LocalDateTime.of(2026, 6, 15, 12, 0)),
-        Arguments.of("yday at noon", reference, LocalDateTime.of(2026, 6, 14, 12, 0)));
+        Arguments.of("yday at noon", reference, LocalDateTime.of(2026, 6, 14, 12, 0)),
+        Arguments.of("29-12-2024", reference, LocalDateTime.of(2024, 12, 29, 12, 0)),
+        Arguments.of("29/12", reference, LocalDateTime.of(2026, 12, 29, 12, 0)),
+        Arguments.of("11/12/24", reference, LocalDateTime.of(2024, 12, 11, 12, 0)),
+        Arguments.of("12/31/24", reference, LocalDateTime.of(2024, 12, 31, 12, 0)),
+        Arguments.of("2024-12-29 at 19:30", reference, LocalDateTime.of(2024, 12, 29, 19, 30)),
+        Arguments.of("29/12 at midnight", reference, LocalDateTime.of(2026, 12, 29, 0, 0)),
+        Arguments.of("31.01.2025 at 08:15", reference, LocalDateTime.of(2025, 1, 31, 8, 15)),
+        Arguments.of("04/05/06 at 09:00", reference, LocalDateTime.of(2006, 5, 4, 9, 0)),
+        Arguments.of("03-07 at 18:00", reference, LocalDateTime.of(2026, 7, 3, 18, 0)),
+        Arguments.of("2024-12-29 at 7 pm", reference, LocalDateTime.of(2024, 12, 29, 19, 0)));
   }
 }
