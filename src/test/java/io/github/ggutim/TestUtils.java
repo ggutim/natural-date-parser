@@ -1,0 +1,35 @@
+package io.github.ggutim;
+
+import io.github.ggutim.normalizer.pipeline.DefaultNormalizationPipeline;
+import io.github.ggutim.tokenizer.Token;
+import io.github.ggutim.tokenizer.word.*;
+
+import java.util.List;
+
+public class TestUtils {
+
+  private static final List<Word> strategies =
+      List.of(
+          new MonthWord(),
+          new WeekdayWord(),
+          new KeywordWord(),
+          new DateKeywordWord(),
+          new TimeKeywordWord(),
+          new UnitWord(),
+          new YearWord(),
+          new NumberWord(),
+          new TimeWord(),
+          new MeridiemWord());
+
+  private static final DefaultNormalizationPipeline normalizer = new DefaultNormalizationPipeline();
+
+  public static Token tokenOf(String word) {
+    String normalized = normalizer.normalize(word);
+    for (Word strategy : strategies) {
+      if (strategy.match(normalized)) {
+        return strategy.tokenize(normalized);
+      }
+    }
+    throw new IllegalArgumentException(word + " is not a valid token");
+  }
+}

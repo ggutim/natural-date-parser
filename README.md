@@ -1,4 +1,4 @@
-# Natural Date Parser for Java ☕️ 🗣️ 📅
+# Natural Date Parser for Java ☕🗣📅
 
 ## Description
 
@@ -26,13 +26,13 @@
 <dependency>
     <groupId>io.github.ggutim</groupId>
     <artifactId>natural-date-parser</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
 ### Gradle
 ```groovy
-implementation("io.github.ggutim:natural-date-parser:1.0.1")
+implementation("io.github.ggutim:natural-date-parser:1.0.2")
 ```
 
 ## Usage

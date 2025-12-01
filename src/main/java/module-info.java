@@ -1,3 +1,3 @@
-module com.ggutim.naturaldateparser {
-  exports com.ggutim.parser;
+module io.github.ggutim.naturaldateparser {
+  exports io.github.ggutim.parser;
 }
