@@ -1,32 +1,37 @@
-# Natural Date Parser for Java ☕🗣📅
+# Natural Date Parser for Java 🗣📅☕
 
-## Description
+Parse human language like “next Friday at 8pm” into concrete `java.time.LocalDateTime` values. Everything runs locally, powered by a combination of normalization, tokenization, and rule-based pipelines (zero AI).
 
-**Natural Date Parser** allows to parse date and times from natural language to `java.time.LocalDateTime` objects. The engine is written completely in Java, uses normalization, tokenization and pattern matching to parse (completely _AI-less_).
+👉 **Docs & API reference:** https://ggutim.github.io/natural-date-parser/
 
-## Capabilities
+---
 
-- Basic relative dates (e.g. _today_, _tomorrow_)
-- Relative offsets with units (e.g. _in 30 minutes_, _in 2 days_, _3 weeks ago_)
-- Weekday expressions (e.g. _next monday_, _last friday_)
-- Absolute date + time (e.g. _17 april_, _21st of march_, _august 3rd at 10:00_)
-- Other date + time expressions (e.g. _saturday at 5pm_, _tomorrow at noon_)
-- Fuzzy (e.g. _jan_ for January, _thu_ for Thursday)
+## Highlights
 
-## Future implementations
+- Relative keywords (_today_, _tomorrow_, _yesterday_)
+- Offsets with units (_in 45 minutes_, _3 weeks ago_)
+- Weekday expressions (_next Monday_, _last Friday at noon_)
+- Absolute dates & times (_21st of March at 10:00_)
+- Fuzzy abbreviations (_jan_, _thu_, _tmr_)
+- Numeric formats (_10/02/2025_, _2025-02-10 at 19:00_)
 
-- Absolute dates using numbers only (e.g. _10/02/2025_, _2025-02-10 at 7pm_)
-- More complex relatives (e.g. _a week from friday_, _the day after next monday_)
-- More about local date times and multi-language support
+### On the roadmap
+- Richer relative grammar (_a week from Friday_, _the day after next Monday_)
+- Additional locale/time-zone awareness
+- Multi-language tokenizers
+
+---
 
 ## Installation
+
+Available from Maven Central as `io.github.ggutim:natural-date-parser`.
 
 ### Maven
 ```xml
 <dependency>
-    <groupId>io.github.ggutim</groupId>
-    <artifactId>natural-date-parser</artifactId>
-    <version>1.0.2</version>
+  <groupId>io.github.ggutim</groupId>
+  <artifactId>natural-date-parser</artifactId>
+  <version>1.0.2</version>
 </dependency>
 ```
 
@@ -35,14 +40,31 @@
 implementation("io.github.ggutim:natural-date-parser:1.0.2")
 ```
 
-## Usage
+---
+
+## Quick start
 
 ```java
-// Create the parser
+import com.ggutim.parser.NaturalDateParser;
+
 NaturalDateParser parser = NaturalDateParser.builder().build();
-// This will use LocalDateTime.now() as the reference date
-LocalDateTime date = parser.parse("Tomorrow at 5pm");
-// This will use a different reference date. Result will be relative to that one
-LocalDateTime reference = LocalDateTime.of();
-LocalDateTime date = parser.parse("Tomorrow at 5pm", reference);
+
+// Uses LocalDateTime.now()
+LocalDateTime quick = parser.parse("Tomorrow at 5pm");
+
+// Provide a deterministic reference (useful for tests)
+LocalDateTime reference = LocalDateTime.of(2024, 5, 10, 12, 0);
+LocalDateTime relative = parser.parse("next friday at noon", reference);
 ```
+
+Need more examples? Check the [usage guide](https://ggutim.github.io/natural-date-parser/#usage).
+
+---
+
+## Contributing
+
+1. Fork the repo and create a feature branch.
+2. Add tests when changing parsing behavior.
+3. Run `mvn test` and include screenshots/logs if you fix parser edge cases.
+
+Open an [issue](https://github.com/ggutim/natural-date-parser/issues) if you hit tricky phrases or want to propose new rules.
