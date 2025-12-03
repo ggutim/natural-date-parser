@@ -6,7 +6,7 @@
 
     <groupId>io.github.ggutim</groupId>
     <artifactId>natural-date-parser</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>Natural Date Parser</name>

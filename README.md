@@ -31,13 +31,13 @@ Available from Maven Central as `io.github.ggutim:natural-date-parser`.
 <dependency>
   <groupId>io.github.ggutim</groupId>
   <artifactId>natural-date-parser</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 
 ### Gradle
 ```groovy
-implementation("io.github.ggutim:natural-date-parser:1.0.2")
+implementation("io.github.ggutim:natural-date-parser:1.0.3")
 ```
 
 ---
