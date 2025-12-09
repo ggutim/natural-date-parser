@@ -52,7 +52,7 @@ jobs:
           git clone "https://x-access-token:${PAGES_REPO_TOKEN}@github.com/${DOCS_REPO}.git" "${DOCS_DIR}"
           rm -rf "${DOCS_DIR}/natural-date-parser/apidocs"
           mkdir -p "${DOCS_DIR}/natural-date-parser/apidocs"
-          cp -R target/site/apidocs/. "${DOCS_DIR}/natural-date-parser/apidocs/"
+          cp -R target/reports/apidocs/. "${DOCS_DIR}/natural-date-parser/apidocs/"
           cd "${DOCS_DIR}"
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
