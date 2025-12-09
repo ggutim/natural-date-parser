@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    name: Build & Test
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,8 +23,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build & Test with Maven
-        run: mvn -B verify
+      - name: Test with Maven
+        run: mvn clean test
 
   docs:
     name: Publish API Docs
@@ -41,7 +41,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Generate Javadoc
-        run: mvn -B -DskipTests javadoc:javadoc
+        run: mvn clean compile javadoc:javadoc
       - name: Publish API docs
         if: ${{ env.PAGES_REPO_TOKEN != '' }}
         env:
@@ -58,7 +58,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add natural-date-parser/apidocs
-            git commit -m "Update Natural Date Parser API docs from ${GITHUB_SHA}"
+            git commit -m "Update API docs from ${GITHUB_SHA}"
             git push origin HEAD
           else
             echo "No API doc changes to publish"
@@ -78,4 +78,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Deploy with Maven
-        run: mvn -B -s .github/maven-settings.xml -P deploy deploy
+        run: mvn -s .github/maven-settings.xml deploy
